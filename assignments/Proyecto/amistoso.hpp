@@ -6,17 +6,36 @@
 
 class amistoso: public personaje
 {
-  private:
-    bool estatus;
-  public:
-    amistoso();
-    amistoso(bool, std::string);
-    void set_estatus(bool);
-    bool get_estatus();
-    void set_nombre(std::string);
-    std::string get_nombre();
-    void hablar();
-    void atacar();
-    void mostrar();
+    public:
+        //constructor
+        amistoso();
+        //constructor sobrecargado
+        amistoso(std::string, std::string, std::string);
+        //metodos
+        //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
+        void set_nombre(std::string);
+        std::string get_nombre();
+        void set_descripcion(std::string);
+        std::string get_descripcion();
+        void set_ubicacion(std::string);
+        std::string get_ubicacion();
+        void set_estatus(bool);
+        bool get_estatus();
+        void set_puntos(int);
+        int get_puntos();
+        //metodos virtuales
+        void hablar() override; 
+        int juega() override;
+        void recibeInteraccion(int) override;
+    protected:
+        //atributos
+        //los atributos son el nombre en string y los puntos de salud que regenera el item en int.
+        std::string nombre;
+        std::string descripcion;
+        std::string ubicacion;
+        bool estatusDeVida;
+        int puntos;
+  
 };
+
 
