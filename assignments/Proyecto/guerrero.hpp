@@ -7,9 +7,8 @@
 
 class guerrero: public personaje{
     public:
-        //constructor
+        //constructores
         guerrero();
-        //constructor sobrecargado
         guerrero(double, double, double, std::string, std::string, std::string);
         //metodos
         //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
@@ -51,9 +50,12 @@ class guerrero: public personaje{
         double puntosSaludTotal;
         double puntosSaludActual;
         double maxAtaque;
+        double pociones;
+};
+        /*Segun yo como se uso herencia, no es necesario declarar los atributos de la clase personaje
         std::string nombre;
         std::string descripcion;
         std::string ubicacion;
-        bool estatusDeVida;
-        double pociones;
-};
+        bool estatus;
+        */
+

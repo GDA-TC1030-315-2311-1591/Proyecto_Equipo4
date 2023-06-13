@@ -10,19 +10,24 @@
 
 class cuarto{
     public:
-        //constructor
+        //constructor default
         cuarto();
         //constructor sobrecargado
         cuarto(std::string, item*, personaje*, cuarto*); // esto no se que pedo, pero creo que es un apuntador a un objeto de tipo cuarto.
         //metodos
         //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
-        void set_nombre(std::string);
-        std::string get_nombre();
-        void set_item(item*);
-        item* get_item();
-        void set_personaje(personaje*);
-        personaje* get_personaje();
-        void set_cuartoSiguiente(cuarto*);
+        void set_nombre(std::string);//setter de nombre
+        std::string get_nombre();//getter de nombre
+        void set_item(item*);//setter de item
+        item* get_item();//getter de item
+        void set_personaje(personaje*);//setter de personaje
+        personaje* get_personaje();//getter de personaje
+        void set_cuartoSiguiente(cuarto*);//setter de cuarto siguiente
+    protected:
+        std::string nombre;//nombre del cuarto
+        item* item;//item del cuarto
+        personaje* personaje;//personaje del cuarto
+        cuarto* cuartoSiguiente;//cuarto siguiente
 
         
 }
