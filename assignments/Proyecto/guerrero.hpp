@@ -6,6 +6,14 @@
 #pragma once
 
 class guerrero: public personaje{
+    
+    protected:
+        //atributos
+        //los atributos son los puntos de salud total en double, los puntos de salud actual en double, y el maxAtaque que define cual es su ataque
+        double puntosSaludTotal;
+        double puntosSaludActual;
+        double maxAtaque;
+        
     public:
         //constructores
         guerrero();
@@ -45,12 +53,6 @@ class guerrero: public personaje{
         // un metodo para que los amistosos le den vida.
 
 
-    protected:
-        //atributos
-        //los atributos son los puntos de salud total en double, los puntos de salud actual en double, y el maxAtaque que define cual es su ataque
-        double puntosSaludTotal;
-        double puntosSaludActual;
-        double maxAtaque;
 };
         /*Segun yo como se uso herencia, no es necesario declarar los atributos de la clase personaje
         std::string nombre;

@@ -1,4 +1,7 @@
 #include"personaje.hpp"
+#include<iostream>
+#include<string>
+#include<vector>
 #pragma once
 
 personaje::personaje(){//constructor
@@ -14,6 +17,7 @@ personaje::personaje(std::string _nombre, std::string _descripcion,bool _estatus
     //ubicacion = _ubicacion; No necesitamos ubicacion
     estatus = _estatus;
 };
+
 //setters y getters
 
 void personaje::set_nombre(std::string _nombre){
@@ -43,10 +47,32 @@ void personaje::set_estatus(bool _estatus){
 bool personaje::get_estatus(){
     return estatus;
 };
+
+
 //metodos virtuales //Pienso que falta algo aqui en los metodos en el cpp
+
+
 void personaje::hablar(){
-    std::cout << "Hola, soy " << nombre << " y estoy en " << std::endl;
+    if (estatus == true){
+        std::cout << "Hola, soy " << nombre << " y estoy aqui para ayudarte." << std::endl;
+    }
+    else {//esta muerto por lo que dice esto muerto no puedo hablar
+        std::cout << "Estoy muerto, no puedo hablar" << std::endl;
+        
+    }
+}; 
+
+void personaje::imprimecaract(){
+    std::cout << "Nombre: " << nombre << std::endl;
+    std::cout << "Descripcion: " << descripcion << std::endl;
+    //std::cout << "Ubicacion: " << ubicacion << std::endl; No necesitamos ubicacion
+    std::cout << "Estatus: " << estatus << std::endl;
 };
-int personaje::juega(){
-    return 0;
-};
+
+//metodo juega
+/*void juega(){
+    std::cout << "Estoy jugando" << std::endl;
+};*/
+
+
+
