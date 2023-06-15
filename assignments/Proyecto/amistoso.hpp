@@ -9,20 +9,23 @@ class amistoso: public personaje
     public:
         //constructores
         amistoso();
-        amistoso(std::string,std::string, std::string,bool,int,std::string);
+        amistoso(std::string,std::string,std::string,bool,int);
         //metodos
         //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
         void set_nombre(std::string);
         std::string get_nombre();
         void set_descripcion(std::string);
         std::string get_descripcion();
-        void set_ubicacion(std::string);
-        std::string get_ubicacion();
-        void set_puntos(int);
+        //void set_ubicacion(std::string); No necesitamos ubicacion
+       // std::string get_ubicacion(); No necesitamos ubicacion
+        void set_estatus(bool);
+        bool get_estatus();
+       void set_puntos(int);
         int get_puntos();
         void set_historia(std::string);//metodo para cambiar la historia
         std::string get_historia();//metodo para obtener la historia
         //metodos virtuales
+        void imprimecaract() override; //metodo virtual que imprime las caracteristicas del personaje
         void hablar() override; 
         int juega() override;
         void recibeInteraccion(int) override;

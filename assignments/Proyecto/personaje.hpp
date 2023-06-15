@@ -12,7 +12,8 @@ class personaje{
         //constructor
         personaje();
         //constructor sobrecargado
-        personaje(std::string, std::string, std::string,bool);
+        //personaje(std::string, std::string, std::string,bool); La quite porque ya no necesitamos ubicacion
+        personaje(std::string, std::string,bool);
         //metodos
         //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
         void set_nombre(std::string);
@@ -25,8 +26,9 @@ class personaje{
         bool get_estatus();
         //metodos virtuales
         virtual void hablar(); //metodo virtual (tenemos que incluir la clase abstracta)
-        virtual int juega(); //metodo virtual 
-        virtual void recibeInteraccion(int); //metodo virtual
+        virtual int juega() = 0; //metodo virtual puro
+        virtual void recibeInteraccion(int) = 0; //metodo virtual
+        virtual void imprimecaract(); //metodo virtual que imprime las caracteristicas del personaje
 
 
 
@@ -35,7 +37,7 @@ class personaje{
         //los atributos son el nombre la descripcion y la ubicacion en string.
         std::string nombre;
         std::string descripcion;
-        std::string ubicacion;
+        //std::string ubicacion; La quite porque ya no necesitamos ubicacion
         bool estatus;
         
 };

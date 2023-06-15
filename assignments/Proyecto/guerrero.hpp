@@ -9,7 +9,7 @@ class guerrero: public personaje{
     public:
         //constructores
         guerrero();
-        guerrero(double, double, double, std::string, std::string, std::string);
+        guerrero(double, double, double, std::string, std::string, bool);
         //metodos
         //los metodos son los getters y setters de los atributos, y los metodos de atacar y hablar.
         void set_puntosSaludTotal(double);
@@ -31,17 +31,18 @@ class guerrero: public personaje{
         int get_puntos();
        
         //metodos virtuales
+        void imprimecaract() override; //metodo virtual que imprime las caracteristicas del personaje
         void hablar() override;
         int juega() override;
         void recibeInteraccion(int) override;
         // un metodo de imprimir la barra de vida del guerrero con el nombre del guerrero en void.
+        double CalculoBarraVida();//metodo para calcular la barra de vida
         void imprimirBarraVida(); // intentaremos meter una libreria que haga esto visualmente mas bonito.
         // un metodo de saber si esta vivo o no el guerrero en bool.
         bool estaVivo();
         // un metodo de curacion que use las pociones item en void.
         void curacion();
-        // un metodo para tomar pociones de las habitaciones en void.
-        void guardarPociones();
+        // un metodo para que los amistosos le den vida.
 
 
     protected:
@@ -50,7 +51,6 @@ class guerrero: public personaje{
         double puntosSaludTotal;
         double puntosSaludActual;
         double maxAtaque;
-        double pociones;
 };
         /*Segun yo como se uso herencia, no es necesario declarar los atributos de la clase personaje
         std::string nombre;

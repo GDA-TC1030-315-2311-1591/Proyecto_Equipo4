@@ -10,10 +10,10 @@ amistoso::amistoso() : personaje() {
     // Resto de la inicialización de atributos, si es necesario
 }
 //constructor sobrecargado
-amistoso::amistoso(std::string _nombre ,std::string _descripcion,  std::string _ubicacion ,  std::string _historia, bool _estatus,int _puntos) {
+amistoso::amistoso(std::string _nombre ,std::string _descripcion,  std::string _historia, bool _estatus,int _puntos) {
     nombre = _nombre;
     descripcion = _descripcion;
-    ubicacion = _ubicacion;
+    //ubicacion = _ubicacion; No necesitamos ubicacion
     historia = _historia;
     estatus = _estatus;
     puntos = _puntos;
@@ -34,12 +34,14 @@ void amistoso::set_descripcion(std::string _descripcion){
 std::string amistoso::get_descripcion(){
     return descripcion;
 };  
+/* No necesitamos ubicacion
 void amistoso::set_ubicacion(std::string _ubicacion){
     ubicacion = _ubicacion;
 };
 std::string amistoso::get_ubicacion(){
     return ubicacion;
-};  
+}; 
+*/ 
 void amistoso::set_puntos(int _puntos){
     puntos = _puntos;
 };
