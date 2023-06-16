@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <time.h>
+#include "cuarto.hpp"
 
 #include "amistoso.hpp"
 #include "guerrero.hpp"
