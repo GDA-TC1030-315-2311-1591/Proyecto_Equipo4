@@ -49,7 +49,7 @@ int main()
            std::getline(std::cin, line);
           //instanciamos una clase guerrero
           //guerrero::guerrero(double _puntosSaludTotal, double _puntosSaludActual, double _maxAtaque,std::string _nombre, std::string _descripcion,bool _estatus){
-          guerrero Jugador(100,100,10,"Baldo\n", "Con su confianza desbordante, Baldo se acercó a la piedra y, en lugar de levantarla con gracia,"
+          guerrero Jugador(10000,10000,200,"Baldo\n", "Con su confianza desbordante, Baldo se acercó a la piedra y, en lugar de levantarla con gracia,"
           " tropezó y cayó justo encima de ella.\n Para sorpresa de todos, la piedra salió disparada por los aires y se estrelló en el"
           " castillo del Rey Mago.\n El castillo mágico se llenó de destellos y chispas, lo que enfureció al Rey Mago y a sus seguidores.\n "
           "Creyeron que los guerreros habían lanzado deliberadamente la piedra para desafiar su autoridad. La rivalidad entre los \n"
@@ -58,8 +58,7 @@ int main()
           //decimos los puntos de vida del jugador para que este los conozca junto con su vida maxima y su ataque maximo
           //implementamos el metodo imprime para jugador
           //creamos un apuntador a la clase guerrero 
-          while (Jugador.get_puntosSaludActual() >= 0)
-          {
+          
 
           Jugador.imprimecaract();
                      std::getline(std::cin, line);
@@ -76,7 +75,9 @@ int main()
           //friend guerrero operator+(int aumento, guerrero &t);  
           amistoso introductorio2("Hada Titania", "Hola, soy el hada Titania, y te voy a ayudar en tu mision. \nTe aumentare tu vida maxima en 20", "suerte en tu mision!\n\n",true,0);
           introductorio2.imprimecaract();
+                    int mas = 20;
                     Jugador = ++Jugador;
+                    Jugador += mas;
 
                      std::getline(std::cin, line);
 
@@ -116,32 +117,179 @@ int main()
           vampiro.imprimecaract();
                      std::getline(std::cin, line);
           //inicia la primera batalla con el vampiro
-          while (vampiro.get_puntosSaludActual() > 0 && Jugador.get_puntosSaludActual() > 0)
+          //vampiro.get_puntosSaludActual() > 0 && Jugador.get_puntosSaludActual() > 0
+          int c =1;
+          while (c > 0){
+            if (Jugador.get_puntosSaludActual() <= 0)
           {
-  
+            cout<< "Has perdido la batalla, el vampiro te ha matado"<< endl;
+            exit(0);
+          }
+          else if (vampiro.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has ganado la batalla, el vampiro ha muerto\n"<< endl;
+            break;
+          }
           int menos = vampiro.generarRandom(vampiro);
           
           cout<< "El vampiro te ataca y te quita: "<< menos<< " puntos de vida"<< endl;
           //utilizando la sobrecarga -=
           Jugador -= menos;
           std::getline(std::cin, line);
-          Jugador.juega();
-          
-
-          
-            
+          Jugador.juega(Jugador,vampiro);
+          vampiro.imprimirBarraVida();
           }
+          std::getline(std::cin, line);
+          //inicia una instancia que sea una ninfa de amistoso que este en otro lugar y te cure detalla como llegaste ahi
+          //instanciamos una clase amistoso
+          cout<< "Despues de esto, te diriges a los manantiales, un lugar de ensueño donde las aguas cristalinas fluyen en armonía, creando un oasis de paz y serenidad."<< endl;
+          cout<< "Al llegar a los manantiales, te encuentras con una ninfa que te dice: \n"<< endl;
+          amistoso ninfa("Ninfa del bosque", "Hola, soy la ninfa del bosque, y te voy a ayudar en tu mision. \nTe curare 50", "suerte en tu mision!\n\n",true,0);
+          ninfa.imprimecaract();
+                     std::getline(std::cin, line);
+          Jugador += 50;
+          Jugador.imprimirBarraVida();
+                     std::getline(std::cin, line);
 
-          break;
+          //despues de esto te diriges a las montañas donde se encuentra el segundo guerrero que debes convencer a la mala
+          cout<< "despues de esto te diriges a las montañas donde se encuentra el segundo guerrero que debes convencer a la mala" << endl;
+          cout<< "Al llegar a las montañas, te encuentras con un gigante troll que te dice: \n"<< endl;
+          std::getline(std::cin, line);
+          //declaramos el objeto troll que es un objeto de guerrero
+          guerrero troll(200, 200, 20,"Troll","Es un ser de gran tamaño, de piel verde y dientes afilados. \nPosee una fuerza sobrehumana y es muy resistente a los ataques, pero es bastante torpe",true);
+                    //implementamos el metodo imprime para troll
+          troll.imprimecaract();
+                     std::getline(std::cin, line);
+          //inicia la primera batalla con el troll
+          while (c > 0){
+            if (Jugador.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has perdido la batalla, el troll te ha matado"<< endl;
+            exit(0);
+          }
+          else if (troll.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has ganado la batalla, el troll ha muerto"<< endl;
+            break;
+          }
+          int menos = troll.generarRandom(troll);
+          
+          cout<< "El Troll te ataca y te quita: "<< menos<< " puntos de vida"<< endl;
+          //utilizando la sobrecarga -=
+          Jugador -= menos;
+          std::getline(std::cin, line);
+          Jugador.juega(Jugador,troll);
+          troll.imprimirBarraVida();
+          }
+          std::getline(std::cin, line);
+          //inicia una instancia que sea una hada de amistoso que este en otro lugar y te cure detalla como llegaste ahi
+          //instanciamos una clase amistoso
+          cout<< "Despues de esto, visitas la Ciudad Perdida de Eldoria, oculta entre las nieblas\n";
+           "del Bosque Encantado, donde antiguos secretos y tesoros aguardan su descubrimiento.\n";
+            "Al llegar a la ciudad, te encuentras con una hada que te dice: \n";
+            std::getline(std::cin, line);
+          amistoso hada("Hada de Eldoria", "Hola, soy el hada de Eldoria, y te voy a ayudar en tu mision. \nTe curare 80", "suerte en tu mision!\n\n",true,0);
+          hada.imprimecaract();
+                     std::getline(std::cin, line);
+          Jugador += 80;
+          Jugador.imprimirBarraVida();
+                     std::getline(std::cin, line);
+          //despues de esto te dispones a pelear con el tercer guerrero que es un  que debes convencer a la mala
+          cout<< "despues de esto te dispones a pelear con el tercer guerrero que es el caballero oscuro el cual debes convencer a la mala" << endl;
+          cout<< "Al llegar al castillo, te encuentras con un caballero oscuro que te dice: \n"<< endl;
+          std::getline(std::cin, line);
+          //declaramos el objeto caballero que es un objeto de guerrero
+          guerrero caballero(300, 300, 70,"Caballero Oscuro","Es un ser de gran tamaño, de piel verde y dientes afilados. \nPosee una fuerza sobrehumana y es muy resistente a los ataques y es bastante habilidoso",true);
+                    //implementamos el metodo imprime para caballero
+          caballero.imprimecaract();
+                     std::getline(std::cin, line);
+          //inicia la primera batalla con el caballero
+          while (c > 0){
+            if (Jugador.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has perdido la batalla, el caballero te ha matado"<< endl;
+            exit(0);
+          }
+          else if (caballero.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has ganado la batalla, el caballero ha muerto"<< endl;
+            break;
+          }
+          int menos = caballero.generarRandom(caballero);
+
+          cout<< "El Caballero te ataca y te quita: "<< menos<< " puntos de vida"<< endl;
+          //utilizando la sobrecarga -=
+          Jugador -= menos;
+          std::getline(std::cin, line);
+          Jugador.juega(Jugador,caballero);
+          caballero.imprimirBarraVida();
+          }
+          std::getline(std::cin, line);
+
+          //inicia una instancia que sea un mago de amistoso que este en otro lugar y te cure detalla como llegaste ahi
+          //instanciamos una clase amistoso
+          // La Isla Esmeralda, un paraíso tropical de playas de arena blanca, exuberante vegetación y aguas cristalinas llenas de vida marina.
+          cout << "Despues de esto, visitas la Isla Esmeralda, un paraíso tropical de playas de arena blanca, exuberante vegetación y aguas cristalinas llenas de vida marina.\n";
+          cout << "Al llegar a la isla, te encuentras con un mago que te dice: \n";
+          std::getline(std::cin, line);
+          amistoso mago("Mago de la Isla Esmeralda", ". \nTe curare 100", "suerte en tu mision!\n\n",true,0);
+          mago.imprimecaract();
+                     std::getline(std::cin, line);
+          Jugador += 100;
+          Jugador.imprimirBarraVida();
+                     std::getline(std::cin, line);
+          //despues de esto te dispones a pelear con el cuarto guerrero que es un  que debes convencer a la mala
+          cout<< "despues de esto te dispones a pelear con el cuarto guerrero que un... DRAGON!!! el cual debes convencer a la mala" << endl;
+          cout<< "Al llegar a la cueva, te encuentras con un dragon que te dice: \n"<< endl;
+          std::getline(std::cin, line);
+          //declaramos el objeto dragon que es un objeto de guerrero
+          guerrero dragon(500, 500, 100,"Dragon","Es un ser de gran tamaño, de piel verde y dientes afilados. \nPosee una fuerza sobrehumana y es muy resistente a cualquier tipo de ataque.",true);
+                    //implementamos el metodo imprime para 
+          dragon.imprimecaract();
+                     std::getline(std::cin, line);
+          //inicia la primera batalla con el dragon
+          while (c > 0){
+            if (Jugador.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has perdido la batalla, el dragon te ha matado"<< endl;
+            exit(0);
+          }
+          else if (dragon.get_puntosSaludActual() <= 0)
+          {
+            cout<< "Has ganado la batalla, el dragon ha muerto"<< endl;
+            break;
+          }
+          int menos = dragon.generarRandom(dragon);
+
+          cout<< "El dragon te ataca y te quita: "<< menos<< " puntos de vida"<< endl;
+          //utilizando la sobrecarga -=
+          Jugador -= menos;
+          std::getline(std::cin, line);
+          Jugador.juega(Jugador,dragon);
+          dragon.imprimirBarraVida();
+          }
+          std::getline(std::cin, line);
+
+
+          
 
 
 
+          //instanciamos una clase guerrero un enemigo 
+        
+          //que enemigo podemos poner? 
+          
+          guerrero Enemigo(100,100,10,"Enemigo","Este es el Enemigo",true);
 
 
+
+          
+          
+
+          
 
 
 
           //guerrero Enemigo(100,100,10,"Enemigo","Este es el Enemigo",true);
           //instanciamos una clase amistoso
-}
 }

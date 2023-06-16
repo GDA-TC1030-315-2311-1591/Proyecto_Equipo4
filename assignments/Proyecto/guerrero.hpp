@@ -41,7 +41,7 @@ class guerrero: public personaje{
         //metodos virtuales
         void imprimecaract() override; //metodo virtual que imprime las caracteristicas del personaje
         void hablar() override;
-        int juega() override;
+        void juega(guerrero &t,guerrero &t2);
         void recibeInteraccion(int) override;
         // un metodo de imprimir la barra de vida del guerrero con el nombre del guerrero en void.
         double CalculoBarraVida();//metodo para calcular la barra de vida
@@ -59,6 +59,7 @@ class guerrero: public personaje{
         int generarRandom(guerrero &t);
         //sobrecargamos el operador -- para quitarle la vida actual al jugador
         friend void operator-=(guerrero &t, int menos);
+        friend void operator+=(guerrero  &t, int mas);
 
 
 };

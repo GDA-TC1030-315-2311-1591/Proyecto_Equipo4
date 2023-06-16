@@ -36,7 +36,7 @@ class amistoso: public personaje
         //metodos virtuales
         void imprimecaract() override; //metodo virtual que imprime las caracteristicas del personaje
         void hablar() override; 
-        int juega() override;
+        int juega();
         void recibeInteraccion(int) override; //metodo para recibir interaccion
 
 };
