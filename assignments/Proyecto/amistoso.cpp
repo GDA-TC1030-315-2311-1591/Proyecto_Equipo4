@@ -55,9 +55,10 @@ void amistoso::hablar(){
 void amistoso::imprimecaract(){
     std::cout << "Nombre: " << nombre << std::endl;
     std::cout << "Descripcion: " << descripcion << std::endl;
-    std::cout << "Historia: " << historia << std::endl;
-    std::cout << "Estatus: " << estatus << std::endl;
-    std::cout << "Puntos: " << puntos << std::endl;
+    std::cout << " " << historia;
+        if (puntos != 0){
+            std::cout << puntos << std::endl;
+        }
 };
 
 int amistoso::juega(){ // 
@@ -72,6 +73,11 @@ void amistoso::recibeInteraccion(int _interaccion){
         std::cout << "No tengo ganas de jugar." << std::endl;
     }
     };
+
+//funcion friend para aumentar ataque a la clase guerrero sobrecargando el operador +
+
+
+
 
 
 /* No necesitamos ubicacion

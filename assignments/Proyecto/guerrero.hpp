@@ -51,6 +51,14 @@ class guerrero: public personaje{
         // un metodo de curacion que use las pociones item en void.
         void curacion();
         // un metodo para que los amistosos le den vida.
+        // un metodo para que amistosos te den ataque
+        friend guerrero operator+(int aumento, guerrero &t);
+        friend guerrero operator++(guerrero &t);
+        friend guerrero operator-(guerrero &t, int disminucion);
+        // un metodo para generar randoms de ataque y curacion
+        int generarRandom(guerrero &t);
+        //sobrecargamos el operador -- para quitarle la vida actual al jugador
+        friend void operator-=(guerrero &t, int menos);
 
 
 };

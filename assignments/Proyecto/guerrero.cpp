@@ -3,6 +3,16 @@ Esta clase define a los personajes que son guerreros, es decir, que atacan al ju
  Incluyendo al mismo jugador en esta clase, define metodos de ataque y curacion. 
 */
 #include "guerrero.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+#include <random>
+#include <cstdlib>
+#include <stdlib.h>
+#include <time.h>
 
 //Constructores
 guerrero::guerrero(){
@@ -58,7 +68,8 @@ bool guerrero::get_estatus(){
 void guerrero::imprimecaract(){
     std::cout << "Nombre: " << nombre << std::endl;
     std::cout << "Descripcion: " << descripcion << std::endl;
-    std::cout << "Puntos de salud: " << puntosSaludActual << std::endl;
+        std::cout << "Vida maxima: " << puntosSaludTotal << std::endl;
+    std::cout << "Puntos de salud actuales: " << puntosSaludActual << std::endl;
     std::cout << "Puntos de ataque: " << maxAtaque << std::endl;
 }
 
@@ -117,6 +128,55 @@ void guerrero::curacion(){
         puntosSaludActual >= puntosSaludTotal;
     }
 }
+
+// un metodo para que los amistosos le den vida.
+
+// un metodo para que los amistosos te suban el ataque con la funcion friend y el +
+    guerrero operator+(int aumento, guerrero &t){
+        
+        t.maxAtaque = t.maxAtaque + aumento;
+        guerrero *JugadorP = &t;
+        std::cout << "tu ataque maximo ahora es de: "<< t.maxAtaque << std::endl;
+        return *JugadorP;
+    }
+// un metodo para que los amistosos te suben la puntosde salud total con la funcion friend y el ++
+    guerrero operator++(guerrero &t){
+        t.puntosSaludTotal = t.puntosSaludTotal + 20;
+        guerrero *JugadorP = &t;
+        std::cout << "tu puntos de salud total ahora es de: "<< t.puntosSaludTotal << std::endl;
+        return *JugadorP;
+    }
+
+    // un metodo para que los amistosos te bajen el ataque con la funcion friend y el -
+
+    guerrero operator-(guerrero &t,int disminucion){
+        t.maxAtaque = t.maxAtaque - disminucion;
+        guerrero *JugadorP = &t;
+        std::cout << "tu ataque maximo ahora es de: "<< t.maxAtaque << std::endl;
+        return *JugadorP;
+    }
+    // un metodo para generar randoms de ataque y curacion
+    
+    int guerrero::generarRandom(guerrero &t){
+        double s = t.get_maxAtaque();
+        double *atv = &s;
+        srand(time(NULL));
+        int random = rand() % (int)*atv;
+        return random;
+    }
+    //        friend guerrero operator--(guerrero &t);
+    // un metodo para que los amistosos te bajen la puntosde salud actual con la funcion friend y el --
+        void operator-=(guerrero &t,  int menos){
+        t.puntosSaludActual -= menos;
+        std::cout << "tu puntos de salud actual ahora es de: "<< t.puntosSaludActual << std::endl;
+    }
+
+
+
+
+
+
+
 
 
 

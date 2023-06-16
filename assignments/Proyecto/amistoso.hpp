@@ -32,11 +32,13 @@ class amistoso: public personaje
         int get_puntos();
         void set_historia(std::string);//metodo para cambiar la historia
         std::string get_historia();//metodo para obtener la historia
+        void aumAtack(int); //metodo para aumentar el ataque
         //metodos virtuales
         void imprimecaract() override; //metodo virtual que imprime las caracteristicas del personaje
         void hablar() override; 
         int juega() override;
         void recibeInteraccion(int) override; //metodo para recibir interaccion
+
 };
 
 
