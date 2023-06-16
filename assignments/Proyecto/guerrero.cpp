@@ -141,6 +141,9 @@ void guerrero::recibeInteraccion(int ataque){
 }
 
 double guerrero::CalculoBarraVida(){
+    if (puntosSaludActual < 0){
+        puntosSaludActual = 0;
+    }
     double barraVida = (puntosSaludActual/puntosSaludTotal)*100;
     return barraVida;
 }
