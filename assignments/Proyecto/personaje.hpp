@@ -4,7 +4,7 @@
 // class personaje 
 //#include "item.hpp"
 #include <iostream>
-#pragma once
+#pragma once //para que no se incluya mas de una vez
 
 
 class personaje{
@@ -37,7 +37,6 @@ class personaje{
         void juega(); //metodo virtual puro(es para que tu puedas interactuar, se basa de 1-4 dependiendo de la opcion que sea es )
         virtual void recibeInteraccion(int) = 0; //metodo virtual puro para recibir interaccion
         virtual void imprimecaract() = 0;//metodo virtual que imprime las caracteristicas del personaje
-
 
 
     

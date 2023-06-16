@@ -62,6 +62,9 @@ void guerrero::set_estatus(bool _estatus){
     this->estatus = _estatus;
 }
 bool guerrero::get_estatus(){
+    if (puntosSaludActual <= 0){
+        estatus = false;
+    }
     return estatus;
 }
 //Metodos virtuales

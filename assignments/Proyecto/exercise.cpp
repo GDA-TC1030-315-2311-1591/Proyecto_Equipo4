@@ -50,7 +50,7 @@ int main()
            std::getline(std::cin, line);
           //instanciamos una clase guerrero
           //guerrero::guerrero(double _puntosSaludTotal, double _puntosSaludActual, double _maxAtaque,std::string _nombre, std::string _descripcion,bool _estatus){
-          guerrero Jugador(100,100,30,"Baldo\n", "Con su confianza desbordante, Baldo se acercó a la piedra y, en lugar de levantarla con gracia,"
+          guerrero Jugador(150,150,40,"Baldo\n", "Con su confianza desbordante, Baldo se acercó a la piedra y, en lugar de levantarla con gracia,"
           " tropezó y cayó justo encima de ella.\n Para sorpresa de todos, la piedra salió disparada por los aires y se estrelló en el"
           " castillo del Rey Mago.\n El castillo mágico se llenó de destellos y chispas, lo que enfureció al Rey Mago y a sus seguidores.\n "
           "Creyeron que los guerreros habían lanzado deliberadamente la piedra para desafiar su autoridad. La rivalidad entre los \n"
@@ -122,12 +122,12 @@ int main()
           Jugador.hablar();
           int c =1;
           while (c > 0){
-            if (Jugador.get_puntosSaludActual() <= 0)
+            if (Jugador.get_estatus() == false)
           {
             cout<< "\033[1;31mHas perdido la batalla, el vampiro te ha matado\033[0m"<< endl;
             exit(0);
           }
-          else if (vampiro.get_puntosSaludActual() <= 0)
+          else if (vampiro.get_estatus() == false)
           {
             cout<< "Has ganado la batalla, el vampiro ha muerto\n"<< endl;
             break;
@@ -164,12 +164,12 @@ int main()
                      std::getline(std::cin, line);
           //inicia la primera batalla con el troll
           while (c > 0){
-            if (Jugador.get_puntosSaludActual() <= 0)
+            if (Jugador.get_estatus() == false)
           {
             cout<< "\033[1;31mHas perdido la batalla, el troll te ha matado\033[0m"<< endl;
             exit(0);
           }
-          else if (troll.get_puntosSaludActual() <= 0)
+          else if (troll.get_estatus() == false)
           {
             cout<< "Has ganado la batalla, el troll ha muerto"<< endl;
             break;
@@ -208,12 +208,12 @@ int main()
           //inicia la primera batalla con el caballero
           Jugador.hablar();
           while (c > 0){
-            if (Jugador.get_puntosSaludActual() <= 0)
+            if (Jugador.get_estatus() == false)
           {
             cout<< "\033[1;31mHas perdido la batalla, el caballero te ha matado\033[0m"<< endl;
             exit(0);
           }
-          else if (caballero.get_puntosSaludActual() <= 0)
+          else if (caballero.get_estatus()== false)
           {
             cout<< "Has ganado la batalla, el caballero ha muerto"<< endl;
             break;
@@ -250,12 +250,12 @@ int main()
                      std::getline(std::cin, line);
           //inicia la primera batalla con el dragon
           while (c > 0){
-            if (Jugador.get_puntosSaludActual() <= 0)
+            if (Jugador.get_estatus() == false)
           {
             cout<< "\033[1;31m Has perdido la batalla, el dragon te ha matado\033[0m"<< endl;
             exit(0);
           }
-          else if (dragon.get_puntosSaludActual() <= 0)
+          else if (dragon.get_estatus()== false)
           {
             cout<< "\033[1;34m!!!!!Felicidades!!!!!\033[0m"<< endl;
             cout<< "Has ganado la batalla, el dragon ha muerto"<< endl;
