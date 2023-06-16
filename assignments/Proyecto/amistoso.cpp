@@ -61,7 +61,7 @@ void amistoso::imprimecaract(){
         }
 };
 
-int amistoso::juega(){ // 
+void amistoso::juega(){ // 
     std::cout << "No tengo ganas de jugar." << std::endl;
 };
 

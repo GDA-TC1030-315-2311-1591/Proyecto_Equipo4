@@ -89,15 +89,33 @@ void guerrero::hablar(){
     std::cout << "Soy " << nombre << " y te voy a dar en tu madre" << std::endl;
 }
 
+
+
 void guerrero::juega(guerrero &t, guerrero &t2){
                 if (t.get_puntosSaludActual() > 0)
-          {            
+          {  
+
     int opcion;
+    bool repetir = true;
+        while (repetir) {
     std::cout << "¿Que quieres hacer?" << std::endl;
     std::cout << "1. Atacar" << std::endl;
     std::cout << "2. Curar" << std::endl;
     std::cout << "Que opcion deseas?: " << std::endl;
     std::cin >> opcion;
+ 
+        try {
+            if(opcion != 1 && opcion != 2){
+                    throw std::runtime_error("Opcion invalida porfavor re introduzca la opcion en valores de 1 o 2");
+                }
+            else{
+            repetir = false;
+            }
+                
+            }
+            catch (std::runtime_error &e) {
+                std::cout << e.what() << std::endl;
+            }
     if (opcion == 1){
         int df = t.maxAtaque;
 
@@ -108,11 +126,15 @@ void guerrero::juega(guerrero &t, guerrero &t2){
     else if (opcion == 2 && puntosSaludActual < puntosSaludTotal){
             int puntosDecuracion = rand() % 32;
             t.puntosSaludActual = t.puntosSaludActual + puntosDecuracion;
-        std::cout << "Te curaste" << puntosDecuracion << std::endl;
+        std::cout << "Te curaste: " << puntosDecuracion <<" tienes un porcentage de vida de: " <<t.CalculoBarraVida() << "%"<< std::endl;
     }
+            
           
-          }
-}
+}}} // fin del metodo juega
+
+
+
+
 
 void guerrero::recibeInteraccion(int ataque){
     puntosSaludActual = puntosSaludActual - ataque;
@@ -187,8 +209,8 @@ void guerrero::curacion(){
     //        friend guerrero operator--(guerrero &t);
     // un metodo para que los amistosos te bajen la puntosde salud actual con la funcion friend y el --
         void operator-=(guerrero &t,  int menos){
-        t.puntosSaludActual -= menos;
-        std::cout << "tu puntos de salud actual ahora es de: "<< t.puntosSaludActual << std::endl;
+         t.puntosSaludActual -= menos;
+         t.imprimirBarraVida();
     }
 
     void operator+=(guerrero &t, int mas)

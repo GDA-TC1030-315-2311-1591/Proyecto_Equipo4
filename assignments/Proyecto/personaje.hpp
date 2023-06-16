@@ -34,9 +34,9 @@ class personaje{
         bool get_estatus();
         //metodos virtuales
         virtual void hablar(); //metodo virtual 
-         int juega(); //metodo virtual puro(es para que tu puedas interactuar, se basa de 1-4 dependiendo de la opcion que sea es )
-        virtual void recibeInteraccion(int) = 0; //metodo virtual
-        virtual void imprimecaract(); //metodo virtual que imprime las caracteristicas del personaje
+        void juega(); //metodo virtual puro(es para que tu puedas interactuar, se basa de 1-4 dependiendo de la opcion que sea es )
+        virtual void recibeInteraccion(int) = 0; //metodo virtual puro para recibir interaccion
+        virtual void imprimecaract() = 0;//metodo virtual que imprime las caracteristicas del personaje
 
 
 
