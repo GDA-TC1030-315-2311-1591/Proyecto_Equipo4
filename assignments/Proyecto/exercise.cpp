@@ -96,14 +96,14 @@ int main()
           if (numescogido == randomEam[1])
           {
             cout<< "El arbol parlante te dice: \n"<< endl;
-            cout<< "Felicidades, has tenido suerte, tu ataque aumenta en: "<<randomPextra[2]<< endl;
+            cout<< "\033[1;34mFelicidades\033[0m, has tenido suerte, tu ataque aumenta en: "<<randomPextra[2]<< endl;
             Jugador = randomPextra[2] + Jugador;
             Jugador.get_maxAtaque();
           }
           else
           {
             cout<< "El arbol parlante te dice: \n"<< endl;
-            cout<< "Lo siento, no has tenido suerte, tu ataque no aumenta, y no solo eso te intenta secuestrar y te roba bastantes puntos de ataque en total:"<<randomPextra[2]<< endl;
+            cout<< "\033[1;31mLo siento\033[0m, no has tenido suerte, tu ataque no aumenta, y no solo eso te intenta secuestrar y te roba bastantes puntos de ataque en total:"<<randomPextra[2]<< endl;
             Jugador = Jugador - randomPextra[2] ;
           }
                      std::getline(std::cin, line);
@@ -118,11 +118,12 @@ int main()
                      std::getline(std::cin, line);
           //inicia la primera batalla con el vampiro
           //vampiro.get_puntosSaludActual() > 0 && Jugador.get_puntosSaludActual() > 0
+          Jugador.hablar();
           int c =1;
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
-            cout<< "\033[1;31mHas perdido la batalla, el vampiro te ha matad\033[0m"<< endl;
+            cout<< "\033[1;31mHas perdido la batalla, el vampiro te ha matado\033[0m"<< endl;
             exit(0);
           }
           else if (vampiro.get_puntosSaludActual() <= 0)
@@ -204,6 +205,7 @@ int main()
           caballero.imprimecaract();
                      std::getline(std::cin, line);
           //inicia la primera batalla con el caballero
+          Jugador.hablar();
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
@@ -227,8 +229,6 @@ int main()
           std::getline(std::cin, line);
 
           //inicia una instancia que sea un mago de amistoso que este en otro lugar y te cure detalla como llegaste ahi
-          //instanciamos una clase amistoso
-          // La Isla Esmeralda, un paraíso tropical de playas de arena blanca, exuberante vegetación y aguas cristalinas llenas de vida marina.
           cout << "Despues de esto, visitas la Isla Esmeralda, un paraíso tropical de playas de arena blanca, exuberante vegetación y aguas cristalinas llenas de vida marina.\n";
           cout << "Al llegar a la isla, te encuentras con un mago que te dice: \n";
           std::getline(std::cin, line);
@@ -256,7 +256,7 @@ int main()
           }
           else if (dragon.get_puntosSaludActual() <= 0)
           {
-            cout<< "!!!!!Felicidades!!!!!"<< endl;
+            cout<< "\033[1;34m!!!!!Felicidades!!!!!\033[0m"<< endl;
             cout<< "Has ganado la batalla, el dragon ha muerto"<< endl;
             cout<< "Rcuperaste el diamante y con ello la paz"<< endl;
             exit(0);

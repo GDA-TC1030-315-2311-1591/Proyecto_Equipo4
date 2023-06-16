@@ -77,7 +77,7 @@ void guerrero::imprimecaract(){
 // DECLARAMOS LOS SIGUIENTES METODOS VIRTUALES
 
 void guerrero::hablar(){
-    std::cout << "Soy " << nombre << " y te voy a dar en tu madre" << std::endl;
+    std::cout << "Soy " << nombre << "y voy a pelear contigo" << std::endl;
 }
 void guerrero::juega(guerrero &t, guerrero &t2){
                 if (t.get_puntosSaludActual() > 0)
@@ -174,7 +174,7 @@ void guerrero::curacion(){
         }
         guerrero *JugadorP = &t;
         
-        std::cout << "tu puntos de salud total ahora es de: "<< t.puntosSaludTotal << std::endl;
+        std::cout << "\033[1mtu puntos de salud total ahora es de: \033[0m"<< t.puntosSaludTotal << std::endl;
         return *JugadorP;
     }
 

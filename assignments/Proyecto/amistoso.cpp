@@ -53,8 +53,9 @@ void amistoso::hablar(){
     }
 };
 void amistoso::imprimecaract(){//imprime las caracteristicas del personaje
-    std::cout << "Nombre: " << nombre << std::endl;
-    std::cout << "Descripcion: " << descripcion << std::endl;
+    std::cout << "--------------------------------------------------------------------------------------------- " << std::endl;
+    std::cout << "\033[1mNombre: \033[0m" << nombre << std::endl;
+    std::cout << "\033[1mDescripcion: \033[0m" << descripcion << std::endl;
     std::cout << " " << historia;
         if (puntos != 0){
             std::cout << puntos << std::endl;
