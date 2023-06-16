@@ -66,31 +66,19 @@ bool guerrero::get_estatus(){
 }
 //Metodos virtuales
 void guerrero::imprimecaract(){
-    std::cout << "Nombre: " << nombre << std::endl;
-    std::cout << "Descripcion: " << descripcion << std::endl;
-        std::cout << "Vida maxima: " << puntosSaludTotal << std::endl;
-    std::cout << "Puntos de salud actuales: " << puntosSaludActual << std::endl;
-    std::cout << "Puntos de ataque: " << maxAtaque << std::endl;
+    std::cout << "--------------------------------------------------------------------------------------------- " << std::endl;
+    std::cout << "\033[1mNombre: \033[0m " << nombre << std::endl;
+    std::cout << "\033[1mDescripcion: \033[0m" << descripcion << std::endl;
+    std::cout << "\033[1mVida maxima: \033[0m" << puntosSaludTotal << std::endl;
+    std::cout << "\033[1mPuntos de salud actual: \033[0m" << puntosSaludActual << std::endl;
+    std::cout << "\033[1mPuntos de ataque actual: \033[0m" << maxAtaque << std::endl;
 }
 
 // DECLARAMOS LOS SIGUIENTES METODOS VIRTUALES
-/*        void hablar() override;
-        int juega() override;
-        void recibeInteraccion(int) override;
-        // un metodo de imprimir la barra de vida del guerrero con el nombre del guerrero en void.
-        double CalculoBarraVida();//metodo para calcular la barra de vida
-        void imprimirBarraVida(); // intentaremos meter una libreria que haga esto visualmente mas bonito.
-        // un metodo de saber si esta vivo o no el guerrero en bool.
-        bool estaVivo();
-        // un metodo de curacion que use las pociones item en void.
-        void curacion();
-        // un metodo para que los amistosos le den vida.*/
+
 void guerrero::hablar(){
     std::cout << "Soy " << nombre << " y te voy a dar en tu madre" << std::endl;
 }
-
-
-
 void guerrero::juega(guerrero &t, guerrero &t2){
                 if (t.get_puntosSaludActual() > 0)
           {  
@@ -131,11 +119,6 @@ void guerrero::juega(guerrero &t, guerrero &t2){
             
           
 }}} // fin del metodo juega
-
-
-
-
-
 void guerrero::recibeInteraccion(int ataque){
     puntosSaludActual = puntosSaludActual - ataque;
 }
@@ -145,11 +128,14 @@ double guerrero::CalculoBarraVida(){
         puntosSaludActual = 0;
     }
     double barraVida = (puntosSaludActual/puntosSaludTotal)*100;
+    if (barraVida >= 100){
+        barraVida = 100;
+    }
     return barraVida;
 }
 
 void guerrero::imprimirBarraVida(){
-    std::cout << "La barra de vida de " << nombre << " es: " << CalculoBarraVida() << "%" << std::endl;
+    std::cout << " La barra de vida es de  " << nombre << " es: " << CalculoBarraVida() << "%" << std::endl;
 }
 
 bool guerrero::estaVivo(){
@@ -223,14 +209,3 @@ void guerrero::curacion(){
             t.puntosSaludActual = t.puntosSaludTotal;
         }
     }
-
-
-
-
-
-
-
-
-
-
-

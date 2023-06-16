@@ -63,10 +63,4 @@ class guerrero: public personaje{
 
 
 };
-        /*Segun yo como se uso herencia, no es necesario declarar los atributos de la clase personaje
-        std::string nombre;
-        std::string descripcion;
-        std::string ubicacion;
-        bool estatus;
-        */
 

@@ -122,7 +122,7 @@ int main()
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
-            cout<< "Has perdido la batalla, el vampiro te ha matado"<< endl;
+            cout<< "\033[1;31mHas perdido la batalla, el vampiro te ha matad\033[0m"<< endl;
             exit(0);
           }
           else if (vampiro.get_puntosSaludActual() <= 0)
@@ -164,7 +164,7 @@ int main()
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
-            cout<< "Has perdido la batalla, el troll te ha matado"<< endl;
+            cout<< "\033[1;31mHas perdido la batalla, el troll te ha matado\033[0m"<< endl;
             exit(0);
           }
           else if (troll.get_puntosSaludActual() <= 0)
@@ -207,7 +207,7 @@ int main()
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
-            cout<< "Has perdido la batalla, el caballero te ha matado"<< endl;
+            cout<< "\033[1;31mHas perdido la batalla, el caballero te ha matado\033[0m"<< endl;
             exit(0);
           }
           else if (caballero.get_puntosSaludActual() <= 0)
@@ -251,13 +251,15 @@ int main()
           while (c > 0){
             if (Jugador.get_puntosSaludActual() <= 0)
           {
-            cout<< "Has perdido la batalla, el dragon te ha matado"<< endl;
+            cout<< "\033[1;31m Has perdido la batalla, el dragon te ha matado\033[0m"<< endl;
             exit(0);
           }
           else if (dragon.get_puntosSaludActual() <= 0)
           {
+            cout<< "!!!!!Felicidades!!!!!"<< endl;
             cout<< "Has ganado la batalla, el dragon ha muerto"<< endl;
-            break;
+            cout<< "Rcuperaste el diamante y con ello la paz"<< endl;
+            exit(0);
           }
           int menos = dragon.generarRandom(dragon);
 
@@ -269,27 +271,4 @@ int main()
           dragon.imprimirBarraVida();
           }
           std::getline(std::cin, line);
-
-
-          
-
-
-
-          //instanciamos una clase guerrero un enemigo 
-        
-          //que enemigo podemos poner? 
-          
-          guerrero Enemigo(100,100,10,"Enemigo","Este es el Enemigo",true);
-
-
-
-          
-          
-
-          
-
-
-
-          //guerrero Enemigo(100,100,10,"Enemigo","Este es el Enemigo",true);
-          //instanciamos una clase amistoso
 }
