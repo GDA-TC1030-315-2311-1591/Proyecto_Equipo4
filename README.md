@@ -1,18 +1,13 @@
-# Ejercicios - Básicos
+### Proyecto: Juego de Rol en C++
 
-Ubíquese en la **carpeta fuente del proyecto** deseado, use:
+Este proyecto consistió en el desarrollo de un juego de rol (RPG) basado en consola en el lenguaje de programación C++. El juego fue creado en equipos de dos personas y se enfocó en la aplicación de conceptos avanzados de programación, incluyendo herencia, polimorfismo, clases abstractas, sobrecarga de operadores y manejo de excepciones.
 
-```
-cd <assignments/Proyecto>
+#### Destacados del Proyecto
 
-Ej.- cd assignments/Proyecto
+- **Colaboración en Equipo:** Trabajé en estrecha colaboración con un compañero para diseñar e implementar la mecánica del juego y las interacciones entre personajes.
 
-```
-Regrese a la **carpeta fuente origen de todos los proyectos**, use:
+- **Programación Orientada a Objetos:** Utilizamos principios de programación orientada a objetos para crear clases de personajes con atributos como nombre, descripción, ubicación, puntos de salud y capacidades de ataque.
 
-```
-Ej.- cd ../../
+- **Variedad de Personajes:** Implementamos una variedad de tipos de personajes en el juego, incluyendo personajes amigables que compartían historias y podían ayudar al jugador, así como personajes antagonistas que requerían combate para avanzar en la trama.
 
-```
-
-- Proyecto (```cd assignments/Proyecto```)
+Este proyecto fue una oportunidad emocionante para aplicar nuestros conocimientos de programación en C++ y crear un juego de rol interactivo.
